@@ -1,3 +1,5 @@
 from django.shortcuts import render
-
-# Create your views here.
+from .models import Post
+def showblog(request):
+	posts = Post.objects
+	return render(request, 'blog/blog.html', {'posts': posts})
